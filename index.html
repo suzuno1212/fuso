@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>風槍イメトレ</title>
+	</head>
+	<body>
+		<div style="margin-left:10%;margin-right:10%;">
+			<input type="button" value="デバフを付与する" style="width:100%;padding:10px;font-size:30px;" onclick="buttonClick()">
+		</div>
+		<p>
+			<img src="DRK.png" width="100" height="100"/><span id="DRKth"></span><span id="DRKmarker"></span><span id="DRKaoe"></span><br>
+			<img src="GNB.png" width="100" height="100"/><span id="GNBth"></span><span id="GNBmarker"></span><span id="GNBaoe"></span><br>
+			<img src="WHM.png" width="100" height="100"/><span id="WHMth"></span><span id="WHMmarker"></span><span id="WHMaoe"></span><br>
+			<img src="SCH.png" width="100" height="100"/><span id="SCHth"></span><span id="SCHmarker"></span><span id="SCHaoe"></span><br>
+			<img src="RPR.png" width="100" height="100"/><span id="RPRth"></span><span id="RPRmarker"></span><span id="RPRaoe"></span><br>
+			<img src="NIN.png" width="100" height="100"/><span id="NINth"></span><span id="NINmarker"></span><span id="NINaoe"></span><br>
+			<img src="DNC.png" width="100" height="100"/><span id="DNCth"></span><span id="DNCmarker"></span><span id="DNCaoe"></span><br>
+			<img src="RDM.png" width="100" height="100"/><span id="RDMth"></span><span id="RDMmarker"></span><span id="RDMaoe"></span>
+		</p>
+		<p>シャリベル位置：<span id="shar"></span></p>
+		<script type="text/javascript">
+			function arrayShuffle(array){
+				for(var i=(array.length-1);0<i;i--){
+					var r=Math.floor(Math.random()*(i+1));
+					var tmp=array[i];
+					array[i]=array[r];
+					array[r]=tmp;
+				}
+				return array;
+			}
+			function buttonClick(){
+				document.getElementById("DRKth").innerHTML="";
+				document.getElementById("GNBth").innerHTML="";
+				document.getElementById("WHMth").innerHTML="";
+				document.getElementById("SCHth").innerHTML="";
+				document.getElementById("RPRth").innerHTML="";
+				document.getElementById("NINth").innerHTML="";
+				document.getElementById("DNCth").innerHTML="";
+				document.getElementById("RDMth").innerHTML="";
+				document.getElementById("DRKmarker").innerHTML="";
+				document.getElementById("GNBmarker").innerHTML="";
+				document.getElementById("WHMmarker").innerHTML="";
+				document.getElementById("SCHmarker").innerHTML="";
+				document.getElementById("RPRmarker").innerHTML="";
+				document.getElementById("NINmarker").innerHTML="";
+				document.getElementById("DNCmarker").innerHTML="";
+				document.getElementById("RDMmarker").innerHTML="";
+				document.getElementById("DRKaoe").innerHTML="";
+				document.getElementById("GNBaoe").innerHTML="";
+				document.getElementById("WHMaoe").innerHTML="";
+				document.getElementById("SCHaoe").innerHTML="";
+				document.getElementById("RPRaoe").innerHTML="";
+				document.getElementById("NINaoe").innerHTML="";
+				document.getElementById("DNCaoe").innerHTML="";
+				document.getElementById("RDMaoe").innerHTML="";
+				var jobs=["DRK","GNB","WHM","SCH","RPR","NIN","DNC","RDM"];
+				arrayShuffle(jobs);
+				var THjobs=jobs;
+				var img_dice1=document.createElement('img');
+				img_dice1.src='Lightning.png';
+				img_dice1.width=100;
+				img_dice1.height=100;
+				var img_dice2=document.createElement('img');
+				img_dice2.src='Lightning.png';
+				img_dice2.width=100;
+				img_dice2.height=100;
+				var imgdice1=document.getElementById(`${jobs[0]}th`);
+				var imgdice2=document.getElementById(`${jobs[1]}th`);
+				imgdice1.appendChild(img_dice1);
+				imgdice2.appendChild(img_dice2);
+				arrayShuffle(jobs);
+				var MKlist=new Array();
+				var nonMKlist=new Array();
+				for(let i=0;i<4;i++){
+					if((jobs[i]!=THjobs[0])||(jobs[i]!=THjobs[1])){
+						MKlist.push(jobs[i]);
+					}
+				}
+				for(let i=4;i<jobs.length;i++){
+					if((jobs[i]!=THjobs[0])||(jobs[i]!=THjobs[1])){
+						nonMKlist.push(jobs[i]);
+					}
+				}
+				var img_marker1=document.createElement('img');
+				img_marker1.src='blue.png';
+				img_marker1.width=100;
+				img_marker1.height=100;
+				var img_marker2=document.createElement('img');
+				img_marker2.src='green.png';
+				img_marker2.width=100;
+				img_marker2.height=100;
+				var img_marker3=document.createElement('img');
+				img_marker3.src='Pair.png';
+				img_marker3.width=100;
+				img_marker3.height=100;
+				var img_marker4=document.createElement('img');
+				img_marker4.src='Pair.png';
+				img_marker4.width=100;
+				img_marker4.height=100;
+				var img_arrow1=document.createElement('img');
+				img_arrow1.src='Arrow3.png';
+				img_arrow1.width=100;
+				img_arrow1.height=100;
+				var img_arrow2=document.createElement('img');
+				img_arrow2.src='Arrow7.png';
+				img_arrow2.width=100;
+				img_arrow2.height=100;
+				var imgmarker1=document.getElementById(`${jobs[0]}marker`);
+				var imgmarker2=document.getElementById(`${jobs[1]}marker`);
+				var imgmarker3=document.getElementById(`${jobs[2]}marker`);
+				var imgmarker4=document.getElementById(`${jobs[3]}marker`);
+				imgmarker1.appendChild(img_marker1);
+				imgmarker2.appendChild(img_marker2);
+				imgmarker3.appendChild(img_marker3);
+				imgmarker3.appendChild(img_arrow1);
+				imgmarker4.appendChild(img_marker4);
+				imgmarker4.appendChild(img_arrow2);
+				arrayShuffle(MKlist);
+				arrayShuffle(nonMKlist);
+				var img_aoe1=document.createElement('img');
+				img_aoe1.src='Distance.png';
+				img_aoe1.width=100;
+				img_aoe1.height=100;
+				var img_aoe2=document.createElement('img');
+				img_aoe2.src='StackAOE.png';
+				img_aoe2.width=100;
+				img_aoe2.height=100;
+				var imgaoe1=document.getElementById(`${MKlist[0]}aoe`);
+				var imgaoe2=document.getElementById(`${nonMKlist[0]}aoe`);
+				imgaoe1.appendChild(img_aoe1);
+				imgaoe2.appendChild(img_aoe2);
+				var dice=Math.floor(Math.random()*2+1);
+				if(dice==1){
+					var str=document.getElementById("shar");
+					str.innerHTML="上";
+				}else{
+					var str=document.getElementById("shar");
+					str.innerHTML="下";
+				}
+			}
+		</script>
+	</body>
+</html>
