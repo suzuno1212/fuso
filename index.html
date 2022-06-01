@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>堕天のドラゴンダイブイメトレ</title>
+	</head>
+	<body>
+		<div style="margin-left:10%;margin-right:10%;">
+			<input type="button" value="デバフを付与する" style="width:100%;padding:10px;font-size:30px;" onclick="buttonClick()">
+		</div>
+		<p>
+			<img src="DRK.png" width="100" height="100"/><span id="DRKDice"></span><span id="DRKJump"></span><br>
+			<img src="GNB.png" width="100" height="100"/><span id="GNBDice"></span><span id="GNBJump"></span><br>
+			<img src="WHM.png" width="100" height="100"/><span id="WHMDice"></span><span id="WHMJump"></span><br>
+			<img src="SCH.png" width="100" height="100"/><span id="SCHDice"></span><span id="SCHJump"></span><br>
+			<img src="RPR.png" width="100" height="100"/><span id="RPRDice"></span><span id="RPRJump"></span><br>
+			<img src="NIN.png" width="100" height="100"/><span id="NINDice"></span><span id="NINJump"></span><br>
+			<img src="DNC.png" width="100" height="100"/><span id="DNCDice"></span><span id="DNCJump"></span><br>
+			<img src="RDM.png" width="100" height="100"/><span id="RDMDice"></span><span id="RDMJump"></span>
+		</p>
+		<p>１回目：<span id="circle1"></span></p>
+		<p>２回目：<span id="circle2"></span></p>
+		<script type="text/javascript">
+			function arrayShuffle(array){
+				for(var i=(array.length-1);0<i;i--){
+					var r=Math.floor(Math.random()*(i+1));
+					var tmp=array[i];
+					array[i]=array[r];
+					array[r]=tmp;
+				}
+				return array;
+			}
+			function buttonClick(){
+				document.getElementById("DRKDice").innerHTML="";
+				document.getElementById("GNBDice").innerHTML="";
+				document.getElementById("WHMDice").innerHTML="";
+				document.getElementById("SCHDice").innerHTML="";
+				document.getElementById("RPRDice").innerHTML="";
+				document.getElementById("NINDice").innerHTML="";
+				document.getElementById("DNCDice").innerHTML="";
+				document.getElementById("RDMDice").innerHTML="";
+				document.getElementById("DRKJump").innerHTML="";
+				document.getElementById("GNBJump").innerHTML="";
+				document.getElementById("WHMJump").innerHTML="";
+				document.getElementById("SCHJump").innerHTML="";
+				document.getElementById("RPRJump").innerHTML="";
+				document.getElementById("NINJump").innerHTML="";
+				document.getElementById("DNCJump").innerHTML="";
+				document.getElementById("RDMJump").innerHTML="";
+				var jobs=["DRK","GNB","WHM","SCH","RPR","NIN","DNC","RDM"];
+				arrayShuffle(jobs);
+				var dice1=Math.floor(Math.random()*2+1);
+				if(dice1==1){
+					var img_dice1=document.createElement('img');
+					img_dice1.src='one.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='one.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_dice3=document.createElement('img');
+					img_dice3.src='one.jpg';
+					img_dice3.width=100;
+					img_dice3.height=100;
+					var img_high1=document.createElement('img');
+					img_high1.src='high.png'
+					img_high1.width=100;
+					img_high1.height=100;
+					var img_high2=document.createElement('img');
+					img_high2.src='high.png'
+					img_high2.width=100;
+					img_high2.height=100;
+					var img_high3=document.createElement('img');
+					img_high3.src='high.png'
+					img_high3.width=100;
+					img_high3.height=100;
+					var imgdice1=document.getElementById(`${jobs[0]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[1]}Dice`);
+					var imgdice3=document.getElementById(`${jobs[2]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[0]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[1]}Jump`);
+					var imgjump3=document.getElementById(`${jobs[2]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgdice3.appendChild(img_dice3);
+					imgjump1.appendChild(img_high1);
+					imgjump2.appendChild(img_high2);
+					imgjump3.appendChild(img_high3);
+				}else{
+					var img_dice1=document.createElement('img');
+					img_dice1.src='one.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='one.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_dice3=document.createElement('img');
+					img_dice3.src='one.jpg';
+					img_dice3.width=100;
+					img_dice3.height=100;
+					var img_high=document.createElement('img');
+					img_high.src='high.png'
+					img_high.width=100;
+					img_high.height=100;
+					var img_spine=document.createElement('img');
+					img_spine.src='spine.png'
+					img_spine.width=100;
+					img_spine.height=100;
+					var img_elusive=document.createElement('img');
+					img_elusive.src='elusive.png'
+					img_elusive.width=100;
+					img_elusive.height=100;
+					var imgdice1=document.getElementById(`${jobs[0]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[1]}Dice`);
+					var imgdice3=document.getElementById(`${jobs[2]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[0]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[1]}Jump`);
+					var imgjump3=document.getElementById(`${jobs[2]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgdice3.appendChild(img_dice3);
+					imgjump1.appendChild(img_high);
+					imgjump2.appendChild(img_spine);
+					imgjump3.appendChild(img_elusive);
+				}
+				var dice2=Math.floor(Math.random()*2+1);
+				if(dice2==1){
+					var img_dice1=document.createElement('img');
+					img_dice1.src='two.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='two.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_high1=document.createElement('img');
+					img_high1.src='high.png'
+					img_high1.width=100;
+					img_high1.height=100;
+					var img_high2=document.createElement('img');
+					img_high2.src='high.png'
+					img_high2.width=100;
+					img_high2.height=100;
+					var imgdice1=document.getElementById(`${jobs[3]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[4]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[3]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[4]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgjump1.appendChild(img_high1);
+					imgjump2.appendChild(img_high2);
+				}else{
+					var img_dice1=document.createElement('img');
+					img_dice1.src='two.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='two.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_spine=document.createElement('img');
+					img_spine.src='spine.png'
+					img_spine.width=100;
+					img_spine.height=100;
+					var img_elusive=document.createElement('img');
+					img_elusive.src='elusive.png'
+					img_elusive.width=100;
+					img_elusive.height=100;
+					var imgdice1=document.getElementById(`${jobs[3]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[4]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[3]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[4]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgjump1.appendChild(img_spine);
+					imgjump2.appendChild(img_elusive);
+				}
+				var dice3=Math.floor(Math.random()*2+1);
+				if(dice3==1){
+					var img_dice1=document.createElement('img');
+					img_dice1.src='three.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='three.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_dice3=document.createElement('img');
+					img_dice3.src='three.jpg';
+					img_dice3.width=100;
+					img_dice3.height=100;
+					var img_high1=document.createElement('img');
+					img_high1.src='high.png'
+					img_high1.width=100;
+					img_high1.height=100;
+					var img_high2=document.createElement('img');
+					img_high2.src='high.png'
+					img_high2.width=100;
+					img_high2.height=100;
+					var img_high3=document.createElement('img');
+					img_high3.src='high.png'
+					img_high3.width=100;
+					img_high3.height=100;
+					var imgdice1=document.getElementById(`${jobs[5]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[6]}Dice`);
+					var imgdice3=document.getElementById(`${jobs[7]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[5]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[6]}Jump`);
+					var imgjump3=document.getElementById(`${jobs[7]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgdice3.appendChild(img_dice3);
+					imgjump1.appendChild(img_high1);
+					imgjump2.appendChild(img_high2);
+					imgjump3.appendChild(img_high3);
+				}else{
+					var img_dice1=document.createElement('img');
+					img_dice1.src='three.jpg';
+					img_dice1.width=100;
+					img_dice1.height=100;
+					var img_dice2=document.createElement('img');
+					img_dice2.src='three.jpg';
+					img_dice2.width=100;
+					img_dice2.height=100;
+					var img_dice3=document.createElement('img');
+					img_dice3.src='three.jpg';
+					img_dice3.width=100;
+					img_dice3.height=100;
+					var img_high=document.createElement('img');
+					img_high.src='high.png'
+					img_high.width=100;
+					img_high.height=100;
+					var img_spine=document.createElement('img');
+					img_spine.src='spine.png'
+					img_spine.width=100;
+					img_spine.height=100;
+					var img_elusive=document.createElement('img');
+					img_elusive.src='elusive.png'
+					img_elusive.width=100;
+					img_elusive.height=100;
+					var imgdice1=document.getElementById(`${jobs[5]}Dice`);
+					var imgdice2=document.getElementById(`${jobs[6]}Dice`);
+					var imgdice3=document.getElementById(`${jobs[7]}Dice`);
+					var imgjump1=document.getElementById(`${jobs[5]}Jump`);
+					var imgjump2=document.getElementById(`${jobs[6]}Jump`);
+					var imgjump3=document.getElementById(`${jobs[7]}Jump`);
+					imgdice1.appendChild(img_dice1);
+					imgdice2.appendChild(img_dice2);
+					imgdice3.appendChild(img_dice3);
+					imgjump1.appendChild(img_high);
+					imgjump2.appendChild(img_spine);
+					imgjump3.appendChild(img_elusive);
+				}
+				var dice4=Math.floor(Math.random()*2+1);
+				if(dice4==1){
+					var str=document.getElementById("circle1");
+					str.innerHTML="尾牙の連旋";
+				}else{
+					var str=document.getElementById("circle1");
+					str.innerHTML="牙尾の連旋";
+				}
+				var dice5=Math.floor(Math.random()*2+1);
+				if(dice5==1){
+					var str=document.getElementById("circle2");
+					str.innerHTML="尾牙の連旋";
+				}else{
+					var str=document.getElementById("circle2");
+					str.innerHTML="牙尾の連旋";
+				}
+			}
+		</script>
+	</body>
+</html>
