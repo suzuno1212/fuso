@@ -74,12 +74,12 @@
 				var MKlist=new Array();
 				var nonMKlist=new Array();
 				for(let i=0;i<4;i++){
-					if((jobs[i]!=THjob1)||(jobs[i]=THjob2)){
+					if((jobs[i]!=THjob1)&&(jobs[i]!=THjob2)){
 						MKlist.push(jobs[i]);
 					}
 				}
 				for(let i=4;i<jobs.length;i++){
-					if((jobs[i]!=THjob1)||(jobs[i]!=THjob2)){
+					if((jobs[i]!=THjob1)&&(jobs[i]!=THjob2)){
 						nonMKlist.push(jobs[i]);
 					}
 				}
